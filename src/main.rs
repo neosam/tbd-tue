@@ -1,13 +1,13 @@
-extern crate rusttodo;
+extern crate tbd;
 extern crate rand;
 extern crate time;
 
 mod menu;
 
 use menu::*;
-use rusttodo::tasklog::*;
-use rusttodo::task::*;
-use rusttodo::log::{Log, LogEntry, save_to_fs};
+use tbd::tasklog::*;
+use tbd::task::*;
+use tbd::log::{Log, LogEntry, save_to_fs};
 use rand::thread_rng;
 use time::Tm;
 
