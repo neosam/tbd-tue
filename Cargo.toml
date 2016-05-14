@@ -4,3 +4,12 @@ version = "0.1.0"
 authors = ["Simon Goller <neosam+github@posteo.de>"]
 
 [dependencies]
+## Use deployed code for
+#
+rusttodo = { git = "https://github.com/neosam/rusttodo.git", version = "0.1.0" }
+
+## Use library from local filesystem for development
+#rusttodo = { "../rusttodo/", version = "0.1.0" }
+
+rand = "0.3"
+time = "0.1"
