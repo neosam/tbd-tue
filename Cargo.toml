@@ -1,12 +1,12 @@
 [package]
 name = "tbd-tui"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Simon Goller <neosam+github@posteo.de>"]
 
 [dependencies]
 ## Use deployed code for
 #
-tbd = { git = "https://github.com/neosam/tbd.git", version = "0.1.0" }
+tbd = { git = "https://github.com/neosam/tbd.git", version = "0.1.1" }
 
 ## Use library from local filesystem for development
 #tbd = { "../tbd/", version = "0.1.0" }

@@ -1,9 +1,9 @@
 [root]
 name = "tbd-tui"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "rand 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)",
- "tbd 0.1.0",
+ "tbd 0.1.1 (git+https://github.com/neosam/tbd.git)",
  "time 0.1.35 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -63,7 +63,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "tbd"
-version = "0.1.0"
+version = "0.1.1"
+source = "git+https://github.com/neosam/tbd.git#6a61d5cf05cb115351a9e91db5f80684c5787c40"
 dependencies = [
  "byteorder 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "rand 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)",
