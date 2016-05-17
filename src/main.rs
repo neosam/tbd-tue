@@ -120,6 +120,27 @@ fn load_log(task_log: &mut TaskLog) -> bool {
     false
 }
 
+fn mark_done(task_log: &mut TaskLog) -> bool {
+    let mut counter: i16 = 1;
+    let mut titles: Vec<String> = Vec::new();
+    for (_, a_task) in task_log.task_stat.active.iter() {
+        print!("{}: ", counter);
+        a_task.print_single_line();
+        titles.push(a_task.task.title.clone());
+        counter += 1;
+    }
+    let choice: usize = read_parse("> ");
+    if choice > 0 && choice <= titles.len() {
+        let title = titles[choice - 1].clone();
+        if task_log.mark_done(title.clone()) {
+            println!("Done");
+        } else {
+            println!("Error");
+        }
+    }
+    false
+}
+
 fn activate_tasks(task_log: &mut TaskLog) -> bool {
     task_log.activate(&mut thread_rng());
     true
@@ -137,7 +158,8 @@ fn main() {
         
         ("Pick tasks", sub_menu(m("Are you sure?", "No", vec![
             ("Yes", m_call(activate_tasks))
-        ])))
+        ]))),
+        ("Mark done", m_call(mark_done))
     ]);
     let mut task_log = TaskLog::new();
     main_menu.run(&mut task_log);
